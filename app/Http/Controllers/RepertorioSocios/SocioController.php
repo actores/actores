@@ -51,6 +51,9 @@ class SocioController extends Controller
             'inputFoto' => 'required|image|mimes:jpeg,png,jpg', // Validación para una imagen
         ]);
 
+        if (Socio::where('identificacion', $request->input('inputIdentificacion'))->exists()) {
+            return redirect()->back()->with('error', 'Ya existe un socio con esta identificación.');
+        }
 
         // Procesar la foto
         if ($request->hasFile('inputFoto')) {

@@ -1,4 +1,5 @@
-<x-app-layout>
+@extends('layouts.master')
+@section('content')
     <style>
         .avatar_socio {
             width: 50px;
@@ -49,7 +50,7 @@
     </style>
 
     <section class="section_data">
-        <div class="container">
+        <div>
 
             @if(session('success'))
             <script>
@@ -85,9 +86,9 @@
                     <a href="/exportarRepertorio" class="btn btn-secondary btn-sm">Exportar repertorio general</a>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-5">
                 <div class="col-md-12">
-                    <table class="" id="data-table-socios-repertorio">
+                    <table class="w-100" id="data-table-socios-repertorio">
                         <thead>
                             <tr>
                                 <th scope="col">SOCIO</th>
@@ -182,7 +183,7 @@
         </div>
     </div>
 
-    @push('scripts')
+    @section('scripts')
     <script>
         new DataTable('#data-table-socios-repertorio', {
             responsive: true,
@@ -278,6 +279,6 @@
             });
         });
     </script>
-    @endpush
+    @endsection
 
-</x-app-layout>
+    @endsection

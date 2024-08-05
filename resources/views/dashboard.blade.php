@@ -1,54 +1,33 @@
-<x-app-layout>
-    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
-    <section>
-        <div class="container">
-            <!-- Recorrido - Menú -->
-            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
-                aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('/dashboard') }}">Inicio</a></li>
-                </ol>
-            </nav>
+@extends('layouts.master')
+@section('title')
+    Dashboard
+@endsection
+@section('css')
+    <!-- jsvectormap css -->
+    <link href="{{ URL::asset('build/libs/jsvectormap/css/jsvectormap.min.css') }}" rel="stylesheet" type="text/css" />
+@endsection
+@section('page-title')
+    Dashboard
+@endsection
+@section('body')
 
-            <div class="row">
-                <div class="areas">
-                    <a href="#">
-                        <div class="card px-4 py-2">
-                            <div class="card-body d-flex gap-2 justify-between align-items-center">
-                                <i class="fa-solid fa-folder fs-1"></i>
-                                <span class="title_card">Jurídica</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ url('/menu/distribucion') }}">
-                        <div class="card px-4 py-2">
-                            <div class="card-body d-flex gap-2 justify-between align-items-center">
-                                <i class="fa-solid fa-folder fs-1"></i>
-                                <span class="title_card">Distribución</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{{ url('/menu/socios') }}">
-                        <div class="card px-4 py-2">
-                            <div class="card-body d-flex gap-2 justify-between align-items-center">
-                                <i class="fa-solid fa-folder fs-1"></i>
-                                <span class="title_card">Socios</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <div class="card px-4 py-2">
-                            <div class="card-body d-flex gap-2 justify-between align-items-center">
-                                <i class="fa-solid fa-folder fs-1"></i>
-                                <span class="title_card">Bienestar</span>
-                            </div>
-                        </div>
-                    </a>
-                    
+    <body>
+    @endsection
+    @section('content')
+        <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+        <section class="alert alert-info">
+            <h4 class="alert-heading">Bienvenido al Dashboard de Actores 360</h4>
+            Estamos en proceso de actualizar y mejorar este dashboard para ofrecerte una visión más completa y eficiente de
+            los procesos internos de la Sociedad. En esta sección, encontrarás información
+            clave sobre los distintos procesos y métricas esenciales para la gestión de actores.
 
-                </div>
-            </div>
-        </div>
-    </section>
+            Agradecemos tu comprensión mientras trabajamos en estas mejoras. Si tienes alguna pregunta o necesitas
+            asistencia, no dudes en contactarnos.
 
-</x-app-layout>
+            ¡Gracias por tu apoyo y paciencia!
+        </section>
+    @endsection
+    @section('scripts')
+        <!-- App js -->
+        <script src="{{ URL::asset('build/js/app.js') }}"></script>
+    @endsection

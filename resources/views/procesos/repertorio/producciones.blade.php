@@ -1,4 +1,5 @@
-<x-app-layout>
+@extends('layouts.master')
+@section('content')
     <style>
         .avatar_socio {
             width: 50px;
@@ -340,4 +341,4 @@
         </script>
     @endpush
 
-</x-app-layout>
+    @endsection
